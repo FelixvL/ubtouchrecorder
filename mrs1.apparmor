@@ -1,4 +1,7 @@
 {
-    "policy_groups": [],
+    "policy_groups": [
+        "audio",
+        "microphone"
+    ],
     "policy_version": 16.04
 }

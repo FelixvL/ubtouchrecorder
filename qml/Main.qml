@@ -20,7 +20,10 @@ import Ubuntu.Components 1.3
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 
+import QtMultimedia 5.11
+
 import Example 1.0
+import AudioRecorder 1.0
 
 MainView {
     id: root
@@ -37,6 +40,9 @@ MainView {
         header: PageHeader {
             id: header
             title: i18n.tr('MemoRecorderSetup1')
+        }
+        MediaPlayer {
+            id: player
         }
 
         ColumnLayout {
