@@ -1,0 +1,7 @@
+[Desktop Entry]
+_Name=MemoRecorderSetup1
+Exec=mrs1 %U
+Icon=assets/logo.svg
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true

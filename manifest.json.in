@@ -1,0 +1,15 @@
+{
+    "name": "mrs1.mrs1",
+    "description": "MemoRecorderSetup1",
+    "architecture": "@CLICK_ARCH@",
+    "title": "MemoRecorderSetup1",
+    "hooks": {
+        "mrs1": {
+            "apparmor": "mrs1.apparmor",
+            "desktop":  "mrs1.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "TSFL <tsfl@teteam.nl>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}
