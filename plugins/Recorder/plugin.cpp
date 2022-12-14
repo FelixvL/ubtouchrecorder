@@ -22,5 +22,5 @@
 
 void ExamplePlugin::registerTypes(const char *uri) {
     //@uri Example
-    qmlRegisterType<AudioRecorder>("AudioRecorder", 1, 0, "AudioRecorder");
+    qmlRegisterType<AudioRecorder>("AudioRecorder", 1, 0, "Recorder");
 }

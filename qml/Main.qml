@@ -44,7 +44,9 @@ MainView {
         MediaPlayer {
             id: player
         }
-
+        Recorder{
+            id: recorder
+        }
         ColumnLayout {
             spacing: units.gu(2)
             anchors {
@@ -64,11 +66,20 @@ MainView {
                 Layout.alignment: Qt.AlignHCenter
                 text: i18n.tr('Press the button below and check the logs!')
             }
-
             Button {
+                property var counter : 0
                 Layout.alignment: Qt.AlignHCenter
                 text: i18n.tr('Press here!')
-                onClicked: Example.speak()
+                onClicked: {
+                    Example.speak()
+                    console.log(counter++)
+                    var a = recorder.supportedAudioCodecs()
+                    console.log(a)
+                    var b = recorder.audioInputDevices()
+                    console.log(b)
+                    console.log("============")
+                    recorder.record()
+                }
             }
 
             Item {

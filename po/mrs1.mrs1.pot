@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mrs1.mrs1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-14 20:23+0000\n"
+"POT-Creation-Date: 2022-12-14 20:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,10 +21,10 @@ msgstr ""
 msgid "MemoRecorderSetup1"
 msgstr ""
 
-#: ../qml/Main.qml:65
+#: ../qml/Main.qml:67
 msgid "Press the button below and check the logs!"
 msgstr ""
 
-#: ../qml/Main.qml:70
+#: ../qml/Main.qml:72
 msgid "Press here!"
 msgstr ""
