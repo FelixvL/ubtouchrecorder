@@ -24,6 +24,7 @@ import QtMultimedia 5.11
 
 import Example 1.0
 import AudioRecorder 1.0
+import Qt.labs.folderlistmodel 2.1
 
 MainView {
     id: root
@@ -47,11 +48,45 @@ MainView {
         Recorder{
             id: recorder
         }
+        Audio{
+            id: audioPlayer
+        }
+        FolderListModel{
+            id: fileList
+            folder: "file://" + recorder.filePath
+        }
+        ListView{
+            id: listFiles
+            model: fileList
+            delegate: ListItem{
+                height: units.gu(3)
+                Text {
+                    text: ">>>"+model.fileName
+                    anchors {
+                        left: parent.left
+                        leftMargin: units.gu(2)
+                        verticalCenter: parent.verticalCenter
+                    }
+		        }
+                onClicked: {
+                    audioPlayer.source = "file://" + recorder.filePath + "/" + model.fileName
+                    audioPlayer.play()
+                }
+            }
+            height: units.gu(50)      
+            anchors{
+                top: header.bottom
+                left: parent.left
+                right: parent.right
+                
+            }          
+        }
+
         ColumnLayout {
             spacing: units.gu(2)
             anchors {
                 margins: units.gu(2)
-                top: header.bottom
+                top: listFiles.bottom
                 left: parent.left
                 right: parent.right
                 bottom: parent.bottom
@@ -69,7 +104,7 @@ MainView {
             Button {
                 property var counter : 0
                 Layout.alignment: Qt.AlignHCenter
-                text: i18n.tr('Press here!')
+                text: i18n.tr('Start Recording!')
                 onClicked: {
                     Example.speak()
                     console.log(counter++)
@@ -79,6 +114,45 @@ MainView {
                     console.log(b)
                     console.log("============")
                     recorder.record()
+                    console.log("file://" + recorder.filePath)
+                }
+            }
+            Button {
+                Layout.alignment: Qt.AlignHCenter
+                text: i18n.tr('Stop !!!')
+                onClicked: {
+                    console.log("We gaan stoppen")
+                    recorder.stop()
+                }
+            }
+            Rectangle {
+                id: pressRecordMA
+                color:'red' 
+                height: units.gu(7)
+                width: units.gu(12)
+
+                Layout.alignment: Qt.AlignHCenter
+                MouseArea{
+                    anchors.fill: parent
+                    onPressed: {
+                        pressRecordMA.color = 'green'
+                        console.log("Onpressed in pressrecording");
+                        recorder.record()
+                    }
+                    onReleased:{
+                        pauseDelay.start()
+                    }
+                }
+                Timer{
+                    id: pauseDelay
+                    interval: 500
+                    running: false
+                    repeat: false
+                    onTriggered:{
+                        pressRecordMA.color = 'red'
+                        console.log("OnReleased in pressrecording");
+                        recorder.pause()
+                    }
                 }
             }
 
