@@ -35,12 +35,33 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
+    Component.onCompleted:{
+        pageStack.push(memoRecordPage)
+    }
+    PageStack{
+        id: pageStack
+        anchors.fill: parent
+
+    }
     Page {
+        id: memoRecordPage
+        visible: false
         anchors.fill: parent
 
         header: PageHeader {
             id: header
             title: i18n.tr('MemoRecorderSetup1')
+            trailingActionBar{
+                actions:[
+                    Action{
+                        iconName: 'camcorder'
+                        text: 'videoRecorder'
+                        onTriggered:{
+                            pageStack.push(videoRecorder)
+                        }
+                    }
+                ]
+            }
         }
         MediaPlayer {
             id: player
@@ -145,7 +166,7 @@ MainView {
                 }
                 Timer{
                     id: pauseDelay
-                    interval: 500
+                    interval: 1200
                     running: false
                     repeat: false
                     onTriggered:{
@@ -160,5 +181,11 @@ MainView {
                 Layout.fillHeight: true
             }
         }
+    }
+    VideoRecorder{
+        id: videoRecorder
+        visible: false
+        anchors.fill: parent
+
     }
 }

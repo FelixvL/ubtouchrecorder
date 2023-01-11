@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mrs1.mrs1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-21 19:37+0000\n"
+"POT-Creation-Date: 2022-12-21 20:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,18 +17,22 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Main.qml:43 mrs1.desktop.in.h:1
+#: ../qml/Main.qml:53 ../qml/VideoRecorder.qml:18 mrs1.desktop.in.h:1
 msgid "MemoRecorderSetup1"
 msgstr ""
 
-#: ../qml/Main.qml:102
+#: ../qml/Main.qml:123
 msgid "Press the button below and check the logs!"
 msgstr ""
 
-#: ../qml/Main.qml:107
+#: ../qml/Main.qml:128
 msgid "Start Recording!"
 msgstr ""
 
-#: ../qml/Main.qml:122
+#: ../qml/Main.qml:143 ../qml/VideoRecorder.qml:84
 msgid "Stop !!!"
+msgstr ""
+
+#: ../qml/VideoRecorder.qml:74
+msgid "FOTO TEMP !!!"
 msgstr ""
